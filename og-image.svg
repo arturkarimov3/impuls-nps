@@ -1,0 +1,112 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <radialGradient id="glow1" cx="50%" cy="0%" r="60%">
+      <stop offset="0%" stop-color="#FF5B1D" stop-opacity="0.18"/>
+      <stop offset="100%" stop-color="#0B0D13" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glow2" cx="85%" cy="80%" r="40%">
+      <stop offset="0%" stop-color="#FF5B1D" stop-opacity="0.08"/>
+      <stop offset="100%" stop-color="#0B0D13" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="accentLine" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#FF5B1D"/>
+      <stop offset="100%" stop-color="#FF5B1D" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="#0B0D13"/>
+  <rect width="1200" height="630" fill="url(#glow1)"/>
+  <rect width="1200" height="630" fill="url(#glow2)"/>
+
+  <!-- Subtle grid lines -->
+  <line x1="0" y1="210" x2="1200" y2="210" stroke="rgba(255,255,255,0.03)" stroke-width="1"/>
+  <line x1="0" y1="420" x2="1200" y2="420" stroke="rgba(255,255,255,0.03)" stroke-width="1"/>
+  <line x1="300" y1="0" x2="300" y2="630" stroke="rgba(255,255,255,0.03)" stroke-width="1"/>
+  <line x1="600" y1="0" x2="600" y2="630" stroke="rgba(255,255,255,0.03)" stroke-width="1"/>
+  <line x1="900" y1="0" x2="900" y2="630" stroke="rgba(255,255,255,0.03)" stroke-width="1"/>
+
+  <!-- Top accent line -->
+  <rect x="80" y="0" width="300" height="3" fill="url(#accentLine)"/>
+
+  <!-- Logo -->
+  <text x="80" y="88" font-family="Arial Black, sans-serif" font-weight="900" font-size="32" letter-spacing="4" fill="#F0EDE8">ИМПУЛЬС</text>
+  <text x="80" y="88" font-family="Arial Black, sans-serif" font-weight="900" font-size="32" letter-spacing="4" fill="none">
+    <tspan fill="#F0EDE8">ИМПУЛЬС</tspan><tspan fill="#FF5B1D">.</tspan>
+  </text>
+
+  <!-- Tag -->
+  <rect x="80" y="114" width="220" height="28" rx="14" fill="none" stroke="#FF5B1D" stroke-opacity="0.35" stroke-width="1"/>
+  <text x="190" y="133" font-family="Arial, sans-serif" font-weight="600" font-size="12" letter-spacing="2" text-anchor="middle" fill="#FF5B1D">NPS ДЛЯ СПОРТШКОЛ</text>
+
+  <!-- Main headline -->
+  <text x="80" y="240" font-family="Arial Black, sans-serif" font-weight="900" font-size="62" fill="#F0EDE8" letter-spacing="-1">Узнайте, почему</text>
+  <text x="80" y="314" font-family="Arial Black, sans-serif" font-weight="900" font-size="62" fill="#F0EDE8" letter-spacing="-1">уходят клиенты —</text>
+  <text x="80" y="388" font-family="Arial Black, sans-serif" font-weight="900" font-size="62" fill="#FF5B1D" letter-spacing="-1">до того, как решили.</text>
+
+  <!-- Subtext -->
+  <text x="80" y="450" font-family="Arial, sans-serif" font-size="22" fill="#8A8FA3">Сервис для директоров коммерческих спортивных школ.</text>
+  <text x="80" y="480" font-family="Arial, sans-serif" font-size="22" fill="#8A8FA3">Считайте NPS. Принимайте решения на данных.</text>
+
+  <!-- Stats block -->
+  <rect x="80" y="525" width="160" height="70" rx="10" fill="rgba(255,91,29,0.08)" stroke="rgba(255,91,29,0.15)" stroke-width="1"/>
+  <text x="160" y="556" font-family="Arial Black, sans-serif" font-weight="900" font-size="28" text-anchor="middle" fill="#F0EDE8">1 из 3</text>
+  <text x="160" y="578" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#8A8FA3">клиентов уходит молча</text>
+
+  <rect x="260" y="525" width="160" height="70" rx="10" fill="rgba(255,91,29,0.08)" stroke="rgba(255,91,29,0.15)" stroke-width="1"/>
+  <text x="340" y="556" font-family="Arial Black, sans-serif" font-weight="900" font-size="28" text-anchor="middle" fill="#F0EDE8">+28%</text>
+  <text x="340" y="578" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#8A8FA3">удержание с NPS</text>
+
+  <rect x="440" y="525" width="160" height="70" rx="10" fill="rgba(255,91,29,0.08)" stroke="rgba(255,91,29,0.15)" stroke-width="1"/>
+  <text x="520" y="556" font-family="Arial Black, sans-serif" font-weight="900" font-size="28" text-anchor="middle" fill="#F0EDE8">5 мин</text>
+  <text x="520" y="578" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#8A8FA3">первый расчёт NPS</text>
+
+  <!-- Right side: mock NPS card -->
+  <rect x="740" y="80" width="380" height="470" rx="16" fill="#12151E" stroke="rgba(255,255,255,0.07)" stroke-width="1"/>
+  <rect x="740" y="80" width="380" height="52" rx="16" fill="#181C28"/>
+  <rect x="740" y="116" width="380" height="16" fill="#181C28"/>
+  <circle cx="768" cy="106" r="6" fill="#FF5B5B"/>
+  <circle cx="788" cy="106" r="6" fill="#FFBC2E"/>
+  <circle cx="808" cy="106" r="6" fill="#29CC41"/>
+  <text x="830" y="111" font-family="Arial, sans-serif" font-size="12" fill="#8A8FA3">NPS · Апрель 2026</text>
+
+  <!-- NPS Score -->
+  <text x="780" y="210" font-family="Arial Black, sans-serif" font-weight="900" font-size="72" fill="#4ECE8A">+54</text>
+  <text x="880" y="185" font-family="Arial, sans-serif" font-size="13" fill="#8A8FA3">Net Promoter</text>
+  <text x="880" y="203" font-family="Arial, sans-serif" font-size="13" fill="#8A8FA3">Score</text>
+  <rect x="880" y="212" width="120" height="20" rx="10" fill="rgba(78,206,138,0.12)"/>
+  <text x="940" y="226" font-family="Arial, sans-serif" font-size="11" font-weight="600" text-anchor="middle" fill="#4ECE8A">▲ +8 к прошлому</text>
+
+  <!-- Bars -->
+  <text x="780" y="268" font-family="Arial, sans-serif" font-size="12" fill="#4ECE8A">Промоутеры</text>
+  <rect x="780" y="275" width="300" height="7" rx="4" fill="rgba(255,255,255,0.06)"/>
+  <rect x="780" y="275" width="213" height="7" rx="4" fill="#4ECE8A"/>
+  <text x="1096" y="284" font-family="Arial, sans-serif" font-size="11" text-anchor="end" fill="#8A8FA3">71%</text>
+
+  <text x="780" y="306" font-family="Arial, sans-serif" font-size="12" fill="#8A8FA3">Нейтралы</text>
+  <rect x="780" y="313" width="300" height="7" rx="4" fill="rgba(255,255,255,0.06)"/>
+  <rect x="780" y="313" width="36" height="7" rx="4" fill="#8A8FA3"/>
+  <text x="1096" y="322" font-family="Arial, sans-serif" font-size="11" text-anchor="end" fill="#8A8FA3">12%</text>
+
+  <text x="780" y="344" font-family="Arial, sans-serif" font-size="12" fill="#FF5B5B">Критики</text>
+  <rect x="780" y="351" width="300" height="7" rx="4" fill="rgba(255,255,255,0.06)"/>
+  <rect x="780" y="351" width="51" height="7" rx="4" fill="#FF5B5B"/>
+  <text x="1096" y="360" font-family="Arial, sans-serif" font-size="11" text-anchor="end" fill="#8A8FA3">17%</text>
+
+  <!-- Divider -->
+  <line x1="760" y1="390" x2="1100" y2="390" stroke="rgba(255,255,255,0.07)" stroke-width="1"/>
+
+  <!-- Insight -->
+  <rect x="760" y="404" width="22" height="22" rx="6" fill="rgba(255,91,91,0.12)"/>
+  <text x="771" y="419" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#FF5B5B">!</text>
+  <text x="794" y="413" font-family="Arial, sans-serif" font-size="12" fill="#F0EDE8" font-weight="600">Главная боль критиков:</text>
+  <text x="794" y="430" font-family="Arial, sans-serif" font-size="12" fill="#8A8FA3">нерегулярное расписание · 58 ответов</text>
+
+  <rect x="760" y="448" width="22" height="22" rx="6" fill="rgba(78,206,138,0.12)"/>
+  <text x="771" y="463" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#4ECE8A">✓</text>
+  <text x="794" y="457" font-family="Arial, sans-serif" font-size="12" fill="#F0EDE8" font-weight="600">Промоутеры ценят:</text>
+  <text x="794" y="474" font-family="Arial, sans-serif" font-size="12" fill="#8A8FA3">тренера Алексея · 78% упоминаний</text>
+
+  <!-- Bottom border accent -->
+  <rect x="0" y="627" width="1200" height="3" fill="url(#accentLine)"/>
+</svg>
