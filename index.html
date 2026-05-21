@@ -199,6 +199,8 @@
       letter-spacing: 0.02em;
       margin-bottom: 10px;
     }
+    .pain-card { display: flex; flex-direction: column; }
+    .pain-card h3 { min-height: 52px; }
     .pain-card p { font-size: 15px; color: var(--muted); line-height: 1.6; }
 
     /* ── HOW IT WORKS ── */
@@ -226,6 +228,213 @@
       margin-bottom: 10px;
     }
     .step p { font-size: 14px; color: var(--muted); line-height: 1.6; }
+
+    /* ── TEMPLATES ── */
+    .tpl-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+    .tpl-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      overflow: hidden;
+      transition: border-color 0.25s, transform 0.2s;
+    }
+    .tpl-card:hover { border-color: rgba(255,91,29,0.3); transform: translateY(-3px); }
+    .tpl-head {
+      padding: 18px 22px 14px;
+      border-bottom: 1px solid var(--border);
+      display: flex; align-items: center; gap: 12px;
+    }
+    .tpl-badge {
+      font-size: 11px; font-weight: 600;
+      letter-spacing: 0.08em; text-transform: uppercase;
+      padding: 4px 10px; border-radius: 100px;
+    }
+    .tpl-badge.monthly { background: rgba(255,91,29,0.12); color: var(--accent); }
+    .tpl-badge.first   { background: rgba(78,206,138,0.12); color: #4ECE8A; }
+    .tpl-badge.event   { background: rgba(100,160,255,0.12); color: #64A0FF; }
+    .tpl-head h3 {
+      font-family: var(--font-h); font-size: 17px;
+      font-weight: 700; letter-spacing: 0.02em;
+    }
+    .tpl-body { padding: 18px 22px 22px; }
+    .tpl-q {
+      display: flex; gap: 10px;
+      margin-bottom: 12px; align-items: flex-start;
+    }
+    .tpl-q:last-child { margin-bottom: 0; }
+    .tpl-qnum {
+      font-size: 11px; font-weight: 600;
+      color: var(--accent); min-width: 18px; margin-top: 2px;
+    }
+    .tpl-qtext { font-size: 14px; color: var(--muted); line-height: 1.55; }
+    .tpl-qtext strong { color: var(--text); font-weight: 500; }
+    .tpl-copy {
+      margin-top: 18px;
+      display: inline-flex; align-items: center; gap: 7px;
+      font-size: 13px; font-weight: 600; color: var(--accent);
+      cursor: pointer; background: none; border: none;
+      padding: 0; transition: opacity 0.2s;
+    }
+    .tpl-copy:hover { opacity: 0.75; }
+
+    /* ── ONBOARDING ── */
+    .onboard { background: var(--bg-card); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+    .ob-steps { display: flex; flex-direction: column; gap: 0; max-width: 780px; }
+    .ob-step {
+      display: flex; gap: 0;
+      position: relative;
+    }
+    .ob-left {
+      display: flex; flex-direction: column; align-items: center;
+      width: 52px; flex-shrink: 0;
+    }
+    .ob-circle {
+      width: 36px; height: 36px; border-radius: 50%;
+      background: rgba(255,91,29,0.12);
+      border: 1.5px solid rgba(255,91,29,0.35);
+      display: flex; align-items: center; justify-content: center;
+      font-family: var(--font-h); font-size: 15px; font-weight: 700;
+      color: var(--accent); flex-shrink: 0; z-index: 1;
+    }
+    .ob-line {
+      width: 1.5px; flex: 1; min-height: 24px;
+      background: var(--border);
+      margin: 4px 0;
+    }
+    .ob-step:last-child .ob-line { display: none; }
+    .ob-right {
+      padding: 2px 0 36px 20px;
+    }
+    .ob-right h4 {
+      font-family: var(--font-h); font-size: 18px;
+      font-weight: 700; letter-spacing: 0.02em;
+      margin-bottom: 6px; line-height: 1.2;
+    }
+    .ob-right p { font-size: 14px; color: var(--muted); line-height: 1.6; max-width: 560px; }
+    .ob-tip {
+      display: inline-flex; align-items: center; gap: 6px;
+      margin-top: 10px;
+      font-size: 12px; color: var(--accent);
+      background: rgba(255,91,29,0.08);
+      padding: 5px 12px; border-radius: 6px;
+    }
+
+    /* ── RESULTS EXAMPLES ── */
+    .res-tabs {
+      display: flex; gap: 8px; margin-bottom: 32px;
+    }
+    .res-tab {
+      font-size: 13px; font-weight: 600;
+      padding: 8px 18px; border-radius: 100px;
+      cursor: pointer; border: 1px solid var(--border);
+      background: transparent; color: var(--muted);
+      transition: all 0.2s;
+    }
+    .res-tab.active { background: var(--accent); border-color: var(--accent); color: #fff; }
+    .res-panel { display: none; }
+    .res-panel.active { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+    @media (max-width: 780px) { .res-panel.active { grid-template-columns: 1fr; } }
+
+    .res-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      overflow: hidden;
+    }
+    .res-card-head {
+      padding: 16px 20px;
+      border-bottom: 1px solid var(--border);
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .res-card-head .title { font-size: 13px; font-weight: 600; color: var(--muted); }
+    .res-card-body { padding: 20px; }
+
+    .score-big {
+      display: flex; align-items: baseline; gap: 10px; margin-bottom: 6px;
+    }
+    .score-big .num {
+      font-family: var(--font-h); font-size: 64px;
+      font-weight: 700; line-height: 1;
+    }
+    .score-big .unit { font-size: 14px; color: var(--muted); }
+    .score-delta {
+      font-size: 12px; font-weight: 600;
+      padding: 3px 9px; border-radius: 100px;
+      margin-bottom: 20px; display: inline-block;
+    }
+    .delta-up { background: rgba(78,206,138,0.12); color: #4ECE8A; }
+    .delta-down { background: rgba(255,91,91,0.12); color: #FF5B5B; }
+
+    .seg-bars { margin-bottom: 20px; }
+    .seg-row { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; }
+    .seg-label { font-size: 12px; width: 80px; flex-shrink: 0; }
+    .seg-label.pro { color: #4ECE8A; }
+    .seg-label.neu { color: var(--muted); }
+    .seg-label.det { color: #FF5B5B; }
+    .seg-track { flex: 1; height: 7px; background: rgba(255,255,255,0.06); border-radius: 100px; }
+    .seg-fill { height: 100%; border-radius: 100px; }
+    .seg-pct { font-size: 12px; color: var(--muted); width: 34px; text-align: right; }
+
+    .insights { border-top: 1px solid var(--border); padding-top: 16px; }
+    .insights-title { font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin-bottom: 12px; }
+    .insight-item {
+      display: flex; gap: 10px; margin-bottom: 10px; align-items: flex-start;
+    }
+    .insight-icon {
+      width: 22px; height: 22px; border-radius: 6px;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0; font-size: 11px; margin-top: 1px;
+    }
+    .insight-icon.good { background: rgba(78,206,138,0.12); }
+    .insight-icon.bad  { background: rgba(255,91,91,0.12); }
+    .insight-icon.warn { background: rgba(255,160,40,0.12); }
+    .insight-text { font-size: 13px; color: var(--muted); line-height: 1.55; }
+    .insight-text strong { color: var(--text); font-weight: 500; }
+
+    .quotes { border-top: 1px solid var(--border); padding-top: 16px; margin-top: 4px; }
+    .quote-item {
+      padding: 10px 14px;
+      border-left: 2px solid var(--border);
+      margin-bottom: 10px;
+      font-size: 13px; color: var(--muted);
+      font-style: italic; line-height: 1.55;
+    }
+    .quote-item.pro-q { border-left-color: rgba(78,206,138,0.4); }
+    .quote-item.det-q { border-left-color: rgba(255,91,91,0.4); }
+    .quote-meta { font-size: 11px; color: rgba(138,143,163,0.6); font-style: normal; margin-top: 4px; }
+
+    .action-list { border-top: 1px solid var(--border); padding-top: 16px; }
+    .action-item {
+      display: flex; gap: 10px; margin-bottom: 10px; align-items: flex-start;
+    }
+    .action-num {
+      font-family: var(--font-h); font-size: 13px; font-weight: 700;
+      color: var(--accent); min-width: 18px;
+    }
+    .action-text { font-size: 13px; color: var(--muted); line-height: 1.55; }
+    .action-text strong { color: var(--text); font-weight: 500; }
+
+    .trial-score {
+      display: flex; align-items: center; gap: 16px; margin-bottom: 20px;
+    }
+    .trial-score .big {
+      font-family: var(--font-h); font-size: 56px; font-weight: 700;
+      color: #64A0FF; line-height: 1;
+    }
+    .trial-score-meta { }
+    .trial-score-meta .label { font-size: 13px; color: var(--muted); }
+    .trial-score-meta .sub { font-size: 12px; color: rgba(138,143,163,0.6); margin-top: 2px; }
+
+    .dist-bars { margin-bottom: 6px; }
+    .dist-row { display: flex; align-items: center; gap: 8px; margin-bottom: 6px; }
+    .dist-key { font-size: 12px; color: var(--muted); width: 18px; text-align: center; }
+    .dist-track { flex: 1; height: 6px; background: rgba(255,255,255,0.06); border-radius: 100px; }
+    .dist-fill { height: 100%; border-radius: 100px; background: #64A0FF; }
+    .dist-cnt { font-size: 11px; color: var(--muted); width: 20px; }
 
     /* ── FEATURES ── */
     .features-wrap {
@@ -291,6 +500,74 @@
     .bar-fill { height: 100%; border-radius: 100px; }
     .bar-pct { font-size: 12px; color: var(--muted); width: 30px; flex-shrink: 0; }
     .mock-tag { font-size: 11px; color: var(--muted); border-top: 1px solid var(--border); padding-top: 14px; margin-top: 4px; }
+
+    /* ── VALUE CHAIN ── */
+    .chain-wrap {
+      display: flex; align-items: stretch; gap: 0;
+      margin-top: 8px;
+    }
+    @media (max-width: 700px) {
+      .chain-wrap { flex-direction: column; }
+      .chain-arrow { transform: rotate(90deg); align-self: center; }
+    }
+    .chain-step {
+      flex: 1;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 28px 24px 32px;
+      position: relative;
+    }
+    .chain-arrow {
+      display: flex; align-items: center; justify-content: center;
+      width: 36px; flex-shrink: 0;
+      color: var(--accent); font-size: 20px;
+    }
+    .chain-num {
+      font-family: var(--font-h); font-size: 11px; font-weight: 700;
+      letter-spacing: 0.14em; text-transform: uppercase;
+      color: var(--accent); margin-bottom: 12px;
+    }
+    .chain-step h3 {
+      font-family: var(--font-h); font-size: 22px; font-weight: 700;
+      letter-spacing: 0.02em; margin-bottom: 10px;
+    }
+    .chain-step p { font-size: 14px; color: var(--muted); line-height: 1.6; }
+    .chain-result {
+      margin-top: 14px; padding: 10px 14px;
+      background: rgba(255,91,29,0.08);
+      border-radius: 8px;
+      font-size: 13px; color: var(--text);
+      line-height: 1.5;
+    }
+    .chain-result span { color: var(--accent); font-weight: 600; }
+
+    /* ── ABOUT / WHY US ── */
+    .about-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 20px; margin-top: 8px;
+    }
+    .about-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 28px 26px 30px;
+      transition: border-color 0.25s, transform 0.2s;
+    }
+    .about-card:hover { border-color: rgba(255,91,29,0.25); transform: translateY(-3px); }
+    .about-icon {
+      width: 46px; height: 46px; border-radius: 12px;
+      background: rgba(255,91,29,0.1);
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 18px;
+    }
+    .about-icon svg { width: 22px; height: 22px; stroke: var(--accent); fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+    .about-card h3 {
+      font-family: var(--font-h); font-size: 19px; font-weight: 700;
+      letter-spacing: 0.02em; margin-bottom: 10px;
+    }
+    .about-card p { font-size: 14px; color: var(--muted); line-height: 1.65; }
 
     /* ── CTA ── */
     .cta-section {
@@ -385,10 +662,12 @@
 <section class="hero">
   <div class="hero-bg"></div>
   <div class="hero-tag">NPS для спортивных школ</div>
-  <h1>Узнайте, почему уходят клиенты —<br><em>до того, как они ушли</em></h1>
+  <h1>Узнайте, почему уходят клиенты —<br><em>до того, как приняли решение</em></h1>
   <p class="sub">Сервис для директоров и владельцев коммерческих спортивных школ. Собирайте обратную связь, считайте NPS и принимайте решения на данных, а не на ощущениях.</p>
   <form class="hero-form" onsubmit="handleSubmit(event, this)">
-    <input type="email" placeholder="ваш email" required />
+    <input type="hidden" name="access_key" value="5231a541-d736-4160-bb73-39681a41644c" />
+    <input type="hidden" name="subject" value="Новая заявка с лендинга Импульс" />
+    <input type="email" name="email" placeholder="ваш email" required />
     <button type="submit">Хочу первым</button>
   </form>
   <p class="hero-note">Без оплаты. Первые 20 школ получают полный разбор NPS бесплатно.</p>
@@ -411,7 +690,7 @@
 <!-- PAIN -->
 <section class="section">
   <div class="section-tag">Узнаёте себя?</div>
-  <h2 class="section-h">Три вещи, которые мешают <em>удерживать клиентов</em></h2>
+  <h2 class="section-h">Три причины, по которым<br><em>клиенты уходят молча</em></h2>
   <div class="pain-grid">
     <div class="pain-card reveal">
       <div class="pain-icon">
@@ -445,17 +724,372 @@
     <div class="step reveal">
       <div class="step-num">01</div>
       <h3>Загружаете данные</h3>
-      <p>Выгрузите ответы клиентов из любого источника — Google Forms, Excel, CRM. Нужен только список оценок от 0 до 10.</p>
+      <p>Выгрузите ответы клиентов из любого источника — Google Forms, Яндекс Формы, Excel, CRM. Нужен только список оценок от 0 до 10.</p>
     </div>
     <div class="step reveal">
       <div class="step-num">02</div>
       <h3>Получаете NPS</h3>
-      <p>Сервис автоматически рассчитывает NPS, сегментирует клиентов на промоутеров, нейтралов и критиков, выявляет паттерны.</p>
+      <p>Сервис автоматически рассчитывает NPS, сегментирует клиентов на промоутеров, нейтралов и критиков — и сразу даёт ключевые выводы и конкретные варианты решений для вас.</p>
     </div>
     <div class="step reveal">
       <div class="step-num">03</div>
       <h3>Действуете на данных</h3>
       <p>Видите конкретные точки роста: где теряете клиентов, что ценят промоутеры, на что жалуются критики.</p>
+    </div>
+  </div>
+</section>
+
+<!-- TEMPLATES -->
+<section class="section">
+  <div class="section-tag">Шаблоны опросов</div>
+  <h2 class="section-h reveal">Готовые вопросы —<br><em>скопируйте и отправьте</em></h2>
+  <div class="tpl-grid">
+
+    <div class="tpl-card reveal">
+      <div class="tpl-head">
+        <span class="tpl-badge monthly">Ежемесячный</span>
+        <h3>Базовый NPS</h3>
+      </div>
+      <div class="tpl-body">
+        <div style="font-size:12px; color:var(--muted); background:rgba(255,91,29,0.06); border-radius:8px; padding:10px 14px; margin-bottom:16px; line-height:1.55;">
+          📋 <strong style="color:var(--text)">Как использовать:</strong> отправьте ссылку на форму в мессенджер родителям через 3–5 дней после оплаты. Первый вопрос обязательный, остальные — по желанию. Оптимальная длина опроса: 3–5 минут.
+        </div>
+        <div class="tpl-q">
+          <div class="tpl-qnum">1.</div>
+          <div class="tpl-qtext"><strong>По шкале от 0 до 10 — насколько вероятно, что вы порекомендуете нашу школу знакомым?</strong><br><span style="color:var(--muted);font-size:13px">0 — точно не порекомендую, 10 — обязательно порекомендую</span></div>
+        </div>
+        <div class="tpl-q">
+          <div class="tpl-qnum">2.</div>
+          <div class="tpl-qtext">Почему вы поставили именно эту оценку? <span style="color:var(--muted);font-size:13px">(открытый ответ)</span></div>
+        </div>
+        <div class="tpl-q">
+          <div class="tpl-qnum">3.</div>
+          <div class="tpl-qtext">Что для вас важнее всего в нашей школе?
+            <div style="margin-top:6px; display:flex; flex-wrap:wrap; gap:6px;">
+              <span style="font-size:12px; padding:3px 10px; border-radius:100px; border:1px solid var(--border); color:var(--muted)">Тренер</span>
+              <span style="font-size:12px; padding:3px 10px; border-radius:100px; border:1px solid var(--border); color:var(--muted)">Расписание</span>
+              <span style="font-size:12px; padding:3px 10px; border-radius:100px; border:1px solid var(--border); color:var(--muted)">Результаты ребёнка</span>
+              <span style="font-size:12px; padding:3px 10px; border-radius:100px; border:1px solid var(--border); color:var(--muted)">Атмосфера</span>
+              <span style="font-size:12px; padding:3px 10px; border-radius:100px; border:1px solid var(--border); color:var(--muted)">Цена</span>
+              <span style="font-size:12px; padding:3px 10px; border-radius:100px; border:1px solid var(--border); color:var(--muted)">Расположение</span>
+            </div>
+          </div>
+        </div>
+        <div class="tpl-q">
+          <div class="tpl-qnum">4.</div>
+          <div class="tpl-qtext">Что мы могли бы улучшить в первую очередь? <span style="color:var(--muted);font-size:13px">(открытый ответ)</span></div>
+        </div>
+        <div class="tpl-q">
+          <div class="tpl-qnum">5.</div>
+          <div class="tpl-qtext">Как долго ваш ребёнок занимается у нас?
+            <div style="margin-top:6px; display:flex; flex-wrap:wrap; gap:6px;">
+              <span style="font-size:12px; padding:3px 10px; border-radius:100px; border:1px solid var(--border); color:var(--muted)">Менее 1 месяца</span>
+              <span style="font-size:12px; padding:3px 10px; border-radius:100px; border:1px solid var(--border); color:var(--muted)">1–3 месяца</span>
+              <span style="font-size:12px; padding:3px 10px; border-radius:100px; border:1px solid var(--border); color:var(--muted)">3–6 месяцев</span>
+              <span style="font-size:12px; padding:3px 10px; border-radius:100px; border:1px solid var(--border); color:var(--muted)">Более полугода</span>
+            </div>
+          </div>
+        </div>
+        <button class="tpl-copy" onclick="copyTemplate('base')">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+          <span id="copy-base">Скопировать шаблон</span>
+        </button>
+      </div>
+    </div>
+
+    <div class="tpl-card reveal">
+      <div class="tpl-head">
+        <span class="tpl-badge first">После 1-го занятия</span>
+        <h3>Первое впечатление</h3>
+      </div>
+      <div class="tpl-body">
+        <div class="tpl-q">
+          <div class="tpl-qnum">1.</div>
+          <div class="tpl-qtext"><strong>Оцените по шкале 0–10: насколько вам понравилось первое занятие?</strong></div>
+        </div>
+        <div class="tpl-q">
+          <div class="tpl-qnum">2.</div>
+          <div class="tpl-qtext">Как прошло знакомство ребёнка с тренером и группой?</div>
+        </div>
+        <div class="tpl-q">
+          <div class="tpl-qnum">3.</div>
+          <div class="tpl-qtext">Всё ли было понятно по расписанию, оплате, форме?</div>
+        </div>
+        <div class="tpl-q">
+          <div class="tpl-qnum">4.</div>
+          <div class="tpl-qtext">Есть ли вопросы или пожелания на старте?</div>
+        </div>
+        <button class="tpl-copy" onclick="copyTemplate('first')">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+          <span id="copy-first">Скопировать шаблон</span>
+        </button>
+      </div>
+    </div>
+
+    <div class="tpl-card reveal">
+      <div class="tpl-head">
+        <span class="tpl-badge event">После соревнований</span>
+        <h3>Событийный опрос</h3>
+      </div>
+      <div class="tpl-body">
+        <div class="tpl-q">
+          <div class="tpl-qnum">1.</div>
+          <div class="tpl-qtext"><strong>По шкале 0–10 — как вы оцениваете организацию турнира?</strong></div>
+        </div>
+        <div class="tpl-q">
+          <div class="tpl-qnum">2.</div>
+          <div class="tpl-qtext">Доволен ли ребёнок своим выступлением и поддержкой тренера?</div>
+        </div>
+        <div class="tpl-q">
+          <div class="tpl-qnum">3.</div>
+          <div class="tpl-qtext">Что стоит улучшить в подготовке к следующему соревнованию?</div>
+        </div>
+        <button class="tpl-copy" onclick="copyTemplate('event')">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+          <span id="copy-event">Скопировать шаблон</span>
+        </button>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ONBOARDING -->
+<section class="section onboard">
+  <div class="section-tag" style="padding: 0 0 14px;">С нуля до первого NPS</div>
+  <h2 class="section-h reveal">Нет данных? <em>Собрать — просто.</em><br>Вот как это работает</h2>
+  <div class="ob-steps">
+
+    <div class="ob-step reveal">
+      <div class="ob-left"><div class="ob-circle">1</div><div class="ob-line"></div></div>
+      <div class="ob-right">
+        <h4>Выберите шаблон и момент для опроса</h4>
+        <p>Для старта возьмите базовый NPS-шаблон из раздела выше — он подходит для ежемесячного опроса всей базы. Если хотите собрать обратную связь после конкретного события — используйте шаблон «Первое впечатление» или «После соревнований».</p>
+        <div class="ob-tip">💡 Лучшее время для ежемесячного NPS — через 3–5 дней после оплаты. Не спрашивайте сразу после конфликта или переноса занятия</div>
+      </div>
+    </div>
+
+    <div class="ob-step reveal">
+      <div class="ob-left"><div class="ob-circle">2</div><div class="ob-line"></div></div>
+      <div class="ob-right">
+        <h4>Создайте форму по шаблону</h4>
+        <p>Нажмите «Скопировать шаблон» в нужной карточке выше и вставьте вопросы в Google Forms, Яндекс Формы или Tally.so. Базовый шаблон содержит 5 вопросов — оставьте все или уберите лишние на ваш взгляд. Оптимум: не больше 5 вопросов, иначе ответная доля падает.</p>
+        <div class="ob-tip">💡 Вопросы с вариантами ответов (3, 5) — сделайте необязательными. Обязательный только первый — оценка 0–10</div>
+      </div>
+    </div>
+
+    <div class="ob-step reveal">
+      <div class="ob-left"><div class="ob-circle">3</div><div class="ob-line"></div></div>
+      <div class="ob-right">
+        <h4>Создайте форму за 5 минут</h4>
+        <p>Вставьте вопросы в <strong style="color:var(--text)">Google Forms</strong>, <strong style="color:var(--text)">Яндекс Формы</strong> или <strong style="color:var(--text)">Tally.so</strong> — все бесплатные, не требуют технических знаний. Ссылку на форму получите сразу.</p>
+        <div class="ob-tip">💡 В Google Forms и Яндекс Формах включите «Обязательный вопрос» только для оценки 0–10, остальные — по желанию</div>
+      </div>
+    </div>
+
+    <div class="ob-step reveal">
+      <div class="ob-left"><div class="ob-circle">4</div><div class="ob-line"></div></div>
+      <div class="ob-right">
+        <h4>Разошлите клиентам</h4>
+        <p>Отправьте ссылку в мессенджер или чат родителям — лучше от имени тренера или администратора, не от «школы». Личное обращение даёт ответную долю 40–60%, против 10–20% у рассылок.</p>
+        <div class="ob-tip">💡 Пример текста: «Добрый день! Нам важно ваше мнение — 2 минуты и 3 вопроса: [ссылка]»</div>
+      </div>
+    </div>
+
+    <div class="ob-step reveal">
+      <div class="ob-left"><div class="ob-circle">5</div><div class="ob-line"></div></div>
+      <div class="ob-right">
+        <h4>Подождите 3–5 дней и выгрузите ответы</h4>
+        <p>В Google Forms нажмите «Ответы → Таблица Google» — получите файл со всеми оценками. В Яндекс Формах — «Результаты → Скачать». В Tally — экспорт в CSV. Минимум для достоверного NPS: <strong style="color:var(--text)">20–25 ответов</strong>.</p>
+        <div class="ob-tip">💡 Меньше 15 ответов — NPS будет нестабильным. Лучше подождать или напомнить</div>
+      </div>
+    </div>
+
+    <div class="ob-step reveal">
+      <div class="ob-left"><div class="ob-circle">6</div><div class="ob-line"></div></div>
+      <div class="ob-right">
+        <h4>Загрузите в Импульс — и получите результат</h4>
+        <p>Таблицу с оценками загружаете в сервис. Дальше всё автоматически: расчёт NPS, сегментация клиентов, интерпретация результатов и точки роста.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- RESULTS EXAMPLES -->
+<section class="section" style="background: var(--bg-card); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);">
+  <div class="section-tag">Пример результатов</div>
+  <h2 class="section-h reveal">Вот что вы увидите —<br><em>после загрузки данных</em></h2>
+
+  <div class="res-tabs">
+    <button class="res-tab active" onclick="switchTab('nps')">Ежемесячный NPS</button>
+    <button class="res-tab" onclick="switchTab('trial')">После пробного занятия</button>
+  </div>
+
+  <!-- PANEL 1: NPS -->
+  <div class="res-panel active" id="panel-nps">
+    <div class="res-card reveal">
+      <div class="res-card-head">
+        <span class="title">Результаты · Апрель 2026 · 47 ответов</span>
+      </div>
+      <div class="res-card-body">
+        <div class="score-big">
+          <div class="num" style="color: #4ECE8A">+52</div>
+          <div class="unit">NPS</div>
+        </div>
+        <div class="score-delta delta-up">▲ +9 к сентябрю</div>
+        <div class="seg-bars">
+          <div class="seg-row">
+            <div class="seg-label pro">Промоутеры</div>
+            <div class="seg-track"><div class="seg-fill" style="width:69%; background:#4ECE8A"></div></div>
+            <div class="seg-pct">69%</div>
+          </div>
+          <div class="seg-row">
+            <div class="seg-label neu">Нейтралы</div>
+            <div class="seg-track"><div class="seg-fill" style="width:14%; background:var(--muted)"></div></div>
+            <div class="seg-pct">14%</div>
+          </div>
+          <div class="seg-row">
+            <div class="seg-label det">Критики</div>
+            <div class="seg-track"><div class="seg-fill" style="width:17%; background:#FF5B5B"></div></div>
+            <div class="seg-pct">17%</div>
+          </div>
+        </div>
+        <div class="insights">
+          <div class="insights-title">Ключевые выводы</div>
+          <div class="insight-item">
+            <div class="insight-icon good">✓</div>
+            <div class="insight-text"><strong>Тренер — главный актив.</strong> 78% промоутеров в открытых ответах упоминают тренера Алексея как причину рекомендации. Это ваше конкурентное преимущество.</div>
+          </div>
+          <div class="insight-item">
+            <div class="insight-icon bad">!</div>
+            <div class="insight-text"><strong>Расписание — главная боль критиков.</strong> 11 из 15 критиков жалуются на нестабильное время занятий или переносы без предупреждения. Это управляемая проблема.</div>
+          </div>
+          <div class="insight-item">
+            <div class="insight-icon warn">~</div>
+            <div class="insight-text"><strong>Нейтралы — зона роста.</strong> 7 из 14 нейтралов не указали причину оценки. Рекомендуется сделать им персональный звонок — потенциал конверсии в промоутеров высокий.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="res-card reveal">
+      <div class="res-card-body">
+        <div class="quotes">
+          <div class="insights-title" style="margin-bottom:12px">Голоса клиентов</div>
+          <div class="quote-item pro-q">
+            Алексей — лучший тренер, с которым занимался наш сын. Всегда объясняет, не кричит, видит каждого ребёнка. Советую всем знакомым.
+            <div class="quote-meta">Промоутер · оценка 10</div>
+          </div>
+          <div class="quote-item pro-q">
+            За полгода виден реальный прогресс. Раньше ходили в другую школу — там была группа 20 человек. Здесь 8 детей, всё иначе.
+            <div class="quote-meta">Промоутер · оценка 9</div>
+          </div>
+          <div class="quote-item det-q">
+            В этом месяце три раза переносили занятие. Узнавали об этом за час, иногда меньше. Для работающих родителей это очень неудобно.
+            <div class="quote-meta">Критик · оценка 4</div>
+          </div>
+          <div class="quote-item det-q">
+            Цена выросла, а ничего не изменилось. Хотелось бы понять за что платим больше.
+            <div class="quote-meta">Критик · оценка 5</div>
+          </div>
+        </div>
+        <div class="action-list">
+          <div class="insights-title" style="margin-bottom:12px">Рекомендуемые действия</div>
+          <div class="action-item">
+            <div class="action-num">1.</div>
+            <div class="action-text"><strong>Срочно:</strong> Разработать регламент переносов занятий — уведомление минимум за 24 часа. Закрывает боль 73% критиков.</div>
+          </div>
+          <div class="action-item">
+            <div class="action-num">2.</div>
+            <div class="action-text"><strong>На неделе:</strong> Позвонить 7 нейтралам, которые не дали комментарий. Выяснить причину и предложить пробное второе занятие бесплатно.</div>
+          </div>
+          <div class="action-item">
+            <div class="action-num">3.</div>
+            <div class="action-text"><strong>До следующего опроса:</strong> Подготовить письмо клиентам с объяснением изменения цены — покажите конкретно что улучшилось.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PANEL 2: TRIAL -->
+  <div class="res-panel" id="panel-trial">
+    <div class="res-card reveal">
+      <div class="res-card-head">
+        <span class="title">Пробное занятие · Апрель 2026 · 18 ответов</span>
+      </div>
+      <div class="res-card-body">
+        <div class="trial-score">
+          <div class="big">8.4</div>
+          <div class="trial-score-meta">
+            <div class="label">Средняя оценка занятия</div>
+            <div class="sub">из 10 возможных · 18 ответов</div>
+          </div>
+        </div>
+        <div class="dist-bars">
+          <div class="insights-title" style="margin-bottom:10px">Распределение оценок</div>
+          <div class="dist-row"><div class="dist-key">10</div><div class="dist-track"><div class="dist-fill" style="width:50%"></div></div><div class="dist-cnt">9</div></div>
+          <div class="dist-row"><div class="dist-key">9</div><div class="dist-track"><div class="dist-fill" style="width:22%"></div></div><div class="dist-cnt">4</div></div>
+          <div class="dist-row"><div class="dist-key">8</div><div class="dist-track"><div class="dist-fill" style="width:11%"></div></div><div class="dist-cnt">2</div></div>
+          <div class="dist-row"><div class="dist-key">7</div><div class="dist-track"><div class="dist-fill" style="width:11%"></div></div><div class="dist-cnt">2</div></div>
+          <div class="dist-row"><div class="dist-key" style="color:#FF5B5B">5</div><div class="dist-track"><div class="dist-fill" style="width:6%; background:#FF5B5B"></div></div><div class="dist-cnt">1</div></div>
+        </div>
+        <div class="insights" style="margin-top:4px">
+          <div class="insights-title">Ключевые выводы</div>
+          <div class="insight-item">
+            <div class="insight-icon good">✓</div>
+            <div class="insight-text"><strong>Тренер произвёл сильное первое впечатление.</strong> 14 из 18 родителей отметили его как главный плюс занятия. Конверсия в запись высокая — 72%.</div>
+          </div>
+          <div class="insight-item">
+            <div class="insight-icon bad">!</div>
+            <div class="insight-text"><strong>Раздевалка и душевые — слабое место.</strong> 6 родителей упомянули тесноту и отсутствие крючков. Низкозатратное улучшение с заметным эффектом.</div>
+          </div>
+          <div class="insight-item">
+            <div class="insight-icon warn">~</div>
+            <div class="insight-text"><strong>Неясность по следующим шагам.</strong> 5 родителей написали, что не поняли как записаться на постоянной основе. Нужен чёткий офер в конце пробного.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="res-card reveal">
+      <div class="res-card-body">
+        <div class="quotes">
+          <div class="insights-title" style="margin-bottom:12px">Что говорят родители</div>
+          <div class="quote-item pro-q">
+            Дочка ехала с неохотой, а вышла счастливая. Тренер нашёл подход сразу — похвалил, объяснил упражнения на её уровне. Записываемся.
+            <div class="quote-meta">Оценка 10 · записались</div>
+          </div>
+          <div class="quote-item pro-q">
+            Понравилась небольшая группа — тренер видел каждого ребёнка, никого не игнорировал. В прошлой школе было 15 человек, разница огромная.
+            <div class="quote-meta">Оценка 9 · думают</div>
+          </div>
+          <div class="quote-item det-q">
+            Занятие понравилось, но в раздевалке негде повесить вещи, всё лежало на лавке. Мелочь, но неприятно.
+            <div class="quote-meta">Оценка 7 · не записались</div>
+          </div>
+          <div class="quote-item det-q">
+            После занятия не было понятно — что дальше, как и куда платить, когда следующий раз. Сами разобрались, но лучше бы объяснили.
+            <div class="quote-meta">Оценка 8 · записались</div>
+          </div>
+        </div>
+        <div class="action-list">
+          <div class="insights-title" style="margin-bottom:12px">Рекомендуемые действия</div>
+          <div class="action-item">
+            <div class="action-num">1.</div>
+            <div class="action-text"><strong>Сразу:</strong> Добавить в раздевалку крючки и полку — решит жалобу 33% пришедших. Бюджет: до 3 000 ₽.</div>
+          </div>
+          <div class="action-item">
+            <div class="action-num">2.</div>
+            <div class="action-text"><strong>До следующего пробного:</strong> Сделать скрипт завершения занятия — тренер озвучивает оффер, администратор встречает на выходе с распечаткой расписания и стоимостью.</div>
+          </div>
+          <div class="action-item">
+            <div class="action-num">3.</div>
+            <div class="action-text"><strong>В течение 24 часов:</strong> Написать родителям, которые не записались — персонально, с вопросом «что смутило». Из 5 таких обращений 1–2 конвертируются.</div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -532,12 +1166,98 @@
   </div>
 </section>
 
+<!-- VALUE CHAIN -->
+<section class="section">
+  <div class="section-tag">Что это даёт</div>
+  <h2 class="section-h reveal">Четыре шага от вопроса<br><em>до конкретного решения</em></h2>
+  <div class="chain-wrap reveal">
+
+    <div class="chain-step">
+      <div class="chain-num">Шаг 1</div>
+      <h3>Опрос</h3>
+      <p>Короткая анкета для родителей — 2–4 вопроса. Отправляете в мессенджер раз в месяц или после ключевого события.</p>
+      <div class="chain-result">Результат: <span>20–50 честных ответов</span> от реальных клиентов</div>
+    </div>
+
+    <div class="chain-arrow">→</div>
+
+    <div class="chain-step">
+      <div class="chain-num">Шаг 2</div>
+      <h3>Оценка</h3>
+      <p>Загружаете ответы в Импульс. Сервис автоматически считает NPS, делит клиентов на промоутеров, нейтралов и критиков.</p>
+      <div class="chain-result">Результат: <span>NPS-балл</span> и сегментация за 30 секунд</div>
+    </div>
+
+    <div class="chain-arrow">→</div>
+
+    <div class="chain-step">
+      <div class="chain-num">Шаг 3</div>
+      <h3>Выводы</h3>
+      <p>Импульс анализирует открытые ответы и выявляет паттерны: что чаще всего хвалят, на что жалуются, кто в зоне риска ухода.</p>
+      <div class="chain-result">Результат: <span>3–5 ключевых инсайтов</span> с цитатами клиентов</div>
+    </div>
+
+    <div class="chain-arrow">→</div>
+
+    <div class="chain-step">
+      <div class="chain-num">Шаг 4</div>
+      <h3>Решения</h3>
+      <p>На основе выводов сервис предлагает конкретные действия — с приоритетами и понятной логикой «почему именно это».</p>
+      <div class="chain-result">Результат: <span>план на ближайшие 2 недели</span> без догадок</div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="section" style="background: var(--bg-card); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);">
+  <div class="section-tag">Почему мы</div>
+  <h2 class="section-h reveal">Мы знаем и спорт,<br><em>и как работают данные</em></h2>
+  <div class="about-grid">
+
+    <div class="about-card reveal">
+      <div class="about-icon">
+        <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+      </div>
+      <h3>Эксперты в ИИ и аналитике</h3>
+      <p>Мы используем современные методы обработки текста и машинного обучения — чтобы находить смысл в открытых ответах, а не просто считать оценки. Никакой магии, только интерпретируемые алгоритмы.</p>
+    </div>
+
+    <div class="about-card reveal">
+      <div class="about-icon">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+      </div>
+      <h3>Понимаем специфику спортшкол</h3>
+      <p>Мы изучили, как устроен бизнес коммерческих спортивных школ: сезонность, отток после лета, роль тренера, боли родителей. Наши шаблоны и выводы заточены под эту аудиторию — не под банки или интернет-магазины.</p>
+    </div>
+
+    <div class="about-card reveal">
+      <div class="about-icon">
+        <svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+      </div>
+      <h3>NPS — не просто цифра</h3>
+      <p>Мы знаем, что NPS бесполезен без интерпретации. Поэтому строим не калькулятор, а инструмент управленческих решений: каждый результат сопровождается контекстом, бенчмарками и приоритетами действий.</p>
+    </div>
+
+    <div class="about-card reveal">
+      <div class="about-icon">
+        <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+      </div>
+      <h3>Строим вместе с первыми клиентами</h3>
+      <p>Мы не выпускаем «ещё один SaaS». Первые 20 школ работают вместе с нами — их реальные данные, их боли и обратная связь формируют продукт. Ранние пользователи получают влияние на функции и особые условия навсегда.</p>
+    </div>
+
+  </div>
+</section>
+
 <!-- CTA -->
 <section class="section cta-section" id="cta">
   <h2 class="reveal">Станьте одним из первых,<br>кто <em>управляет лояльностью</em></h2>
   <p class="reveal">Оставьте email — пришлём доступ в числе первых. Первый разбор NPS полностью бесплатно.</p>
   <form class="cta-form" onsubmit="handleSubmit(event, this)">
-    <input type="email" placeholder="ваш email" required />
+    <input type="hidden" name="access_key" value="5231a541-d736-4160-bb73-39681a41644c" />
+    <input type="hidden" name="subject" value="Новая заявка с лендинга Импульс" />
+    <input type="email" name="email" placeholder="ваш email" required />
     <button type="submit">Хочу попробовать</button>
   </form>
 </section>
@@ -553,12 +1273,52 @@
 <div class="toast" id="toast">✓ Отлично! Пришлём доступ одним из первых</div>
 
 <script>
-  function handleSubmit(e, form) {
+  function switchTab(tab) {
+    document.querySelectorAll('.res-tab').forEach(t => t.classList.remove('active'));
+    document.querySelectorAll('.res-panel').forEach(p => p.classList.remove('active'));
+    document.getElementById('panel-' + tab).classList.add('active');
+    event.target.classList.add('active');
+  }
+
+  const templates = {
+    base: `📋 Базовый NPS-опрос (ежемесячный)\n\n1. По шкале от 0 до 10 — насколько вероятно, что вы порекомендуете нашу школу знакомым?\n   (0 — точно не порекомендую, 10 — обязательно порекомендую)\n\n2. Почему вы поставили именно эту оценку?\n\n3. Что для вас важнее всего в нашей школе?\n   [ ] Тренер\n   [ ] Расписание\n   [ ] Результаты ребёнка\n   [ ] Атмосфера\n   [ ] Цена\n   [ ] Расположение\n\n4. Что мы могли бы улучшить в первую очередь?\n\n5. Как долго ваш ребёнок занимается у нас?\n   [ ] Менее 1 месяца\n   [ ] 1–3 месяца\n   [ ] 3–6 месяцев\n   [ ] Более полугода`,
+    first: `1. Оцените по шкале 0–10: насколько вам понравилось первое занятие?\n\n2. Как прошло знакомство ребёнка с тренером и группой?\n\n3. Всё ли было понятно по расписанию, оплате, форме?\n\n4. Есть ли вопросы или пожелания на старте?`,
+    event: `1. По шкале 0–10 — как вы оцениваете организацию турнира?\n\n2. Доволен ли ребёнок своим выступлением и поддержкой тренера?\n\n3. Что стоит улучшить в подготовке к следующему соревнованию?`
+  };
+
+  function copyTemplate(key) {
+    navigator.clipboard.writeText(templates[key]).then(() => {
+      const el = document.getElementById('copy-' + key);
+      el.textContent = 'Скопировано ✓';
+      setTimeout(() => el.textContent = 'Скопировать шаблон', 2500);
+    });
+  }
+
+  async function handleSubmit(e, form) {
     e.preventDefault();
-    const toast = document.getElementById('toast');
-    toast.classList.add('show');
-    form.reset();
-    setTimeout(() => toast.classList.remove('show'), 4000);
+    const data = new FormData(form);
+    const button = form.querySelector('button');
+    button.textContent = 'Отправляем...';
+    button.disabled = true;
+    try {
+      const res = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        body: data
+      });
+      const json = await res.json();
+      if (json.success) {
+        const toast = document.getElementById('toast');
+        toast.classList.add('show');
+        form.reset();
+        setTimeout(() => toast.classList.remove('show'), 4000);
+      } else {
+        alert('Что-то пошло не так. Попробуйте ещё раз.');
+      }
+    } catch {
+      alert('Ошибка сети. Проверьте соединение.');
+    }
+    button.textContent = button.closest('.hero-form') ? 'Хочу первым' : 'Хочу попробовать';
+    button.disabled = false;
   }
 
   const observer = new IntersectionObserver(entries => {
