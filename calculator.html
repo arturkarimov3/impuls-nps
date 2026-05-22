@@ -811,18 +811,31 @@ async function downloadPdf() {
     const friendCol = G.hdrs.find(h=>h.toLowerCase().includes('позвать'));
     if (friendCol) { const y=G.rows.filter(r=>String(r[friendCol]).toLowerCase().includes('есть кого')).length; extras.push({label:'День друзей',val:Math.round(y/calc.total*100)+'%',sub:`${y} готовы привести`}); }
 
-    const container = document.getElementById('pdf-report');
     const html = buildReportHtml(calc, branches, likesData, improveData, extras);
-    container.innerHTML = html;
-
     const schoolName = G.fileName.replace(/\.[^/.]+$/,'');
+
+    // Создаём временный невидимый iframe для рендеринга
+    const iframe = document.createElement('iframe');
+    iframe.style.cssText = 'position:fixed;top:0;left:0;width:794px;height:1123px;opacity:0;pointer-events:none;border:none;';
+    document.body.appendChild(iframe);
+
+    iframe.contentDocument.open();
+    iframe.contentDocument.write(html);
+    iframe.contentDocument.close();
+
+    // Ждём пока контент отрендерится
+    await new Promise(resolve => setTimeout(resolve, 800));
+
     await html2pdf().set({
-      margin:0, filename:`NPS-отчёт-${schoolName}.pdf`,
-      image:{type:'jpeg',quality:0.98},
-      html2canvas:{scale:2,useCORS:true,logging:false,windowWidth:794},
-      jsPDF:{unit:'mm',format:'a4',orientation:'portrait'},
-      pagebreak:{mode:['css','legacy']}
-    }).from(container.firstElementChild).save();
+      margin: 0,
+      filename: `NPS-отчёт-${schoolName}.pdf`,
+      image: { type: 'jpeg', quality: 0.98 },
+      html2canvas: { scale: 2, useCORS: true, logging: false },
+      jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' },
+      pagebreak: { mode: ['css', 'legacy'] }
+    }).from(iframe.contentDocument.body).save();
+
+    document.body.removeChild(iframe);
   } catch(err) {
     console.error(err);
     alert('Ошибка генерации PDF. Попробуйте ещё раз.');
