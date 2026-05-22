@@ -168,8 +168,7 @@
     .pdf-btn-icon { font-size:18px; }
 
     /* HIDDEN PDF REPORT */
-    #pdf-report { display:none; position:absolute; left:-9999px; top:0; }
-    #pdf-report * { font-family: Arial, sans-serif !important; }
+    #pdf-report { position:fixed; top:0; left:-9999px; width:794px; background:#fff; z-index:-1; }
 
     .toast { position:fixed; bottom:30px; left:50%; transform:translateX(-50%) translateY(80px); background:#1A2630; border:1px solid rgba(78,206,138,0.3); color:var(--green); padding:14px 28px; border-radius:8px; font-size:14px; font-weight:500; transition:transform 0.35s cubic-bezier(0.34,1.56,0.64,1),opacity 0.35s; opacity:0; pointer-events:none; z-index:999; }
     .toast.show { transform:translateX(-50%) translateY(0); opacity:1; }
@@ -813,19 +812,17 @@ async function downloadPdf() {
     if (friendCol) { const y=G.rows.filter(r=>String(r[friendCol]).toLowerCase().includes('есть кого')).length; extras.push({label:'День друзей',val:Math.round(y/calc.total*100)+'%',sub:`${y} готовы привести`}); }
 
     const container = document.getElementById('pdf-report');
-    container.innerHTML = buildReportHtml(calc, branches, likesData, improveData, extras);
-    container.style.display = 'block';
+    const html = buildReportHtml(calc, branches, likesData, improveData, extras);
+    container.innerHTML = html;
 
     const schoolName = G.fileName.replace(/\.[^/.]+$/,'');
     await html2pdf().set({
       margin:0, filename:`NPS-отчёт-${schoolName}.pdf`,
       image:{type:'jpeg',quality:0.98},
-      html2canvas:{scale:2,useCORS:true,logging:false},
+      html2canvas:{scale:2,useCORS:true,logging:false,windowWidth:794},
       jsPDF:{unit:'mm',format:'a4',orientation:'portrait'},
       pagebreak:{mode:['css','legacy']}
-    }).from(container).save();
-
-    container.style.display = 'none';
+    }).from(container.firstElementChild).save();
   } catch(err) {
     console.error(err);
     alert('Ошибка генерации PDF. Попробуйте ещё раз.');
